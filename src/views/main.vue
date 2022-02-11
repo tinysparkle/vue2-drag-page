@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    123
+    <el-button>123</el-button>
   </div>
 </template>
 
