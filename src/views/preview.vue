@@ -18,6 +18,14 @@
       </el-tooltip>
     </div>
     <div class="preview-block" :style="{ height: model.headerSpace + 'px' }">
+      <TemplateRuler
+        :rulerLength="220"
+        style="position: absolute; top: -30px;"/>
+      <TemplateRuler
+        :rulerLength="50"
+        style="position: absolute; top: 0; left: -30px"
+        :isVertical="true" />
+
       <div class="area-title">Header</div>
       <div v-if="currentFocus === 'headerSpace'" class="border-text-left">
         <span class="text">HeaderSpace</span>
@@ -48,11 +56,13 @@
 <script>
 import DragItem from './dragItem.vue'
 import DragItemContent from './dragItemContent.vue'
+import TemplateRuler from './TemplateRuler.vue'
 
 export default {
   components: {
     DragItem,
-    DragItemContent
+    DragItemContent,
+    TemplateRuler
   },
   props: {
     model: {
@@ -100,9 +110,14 @@ export default {
   }
   .preview-block {
     position: relative;
+    margin: 30px 0 0 30px;
     border-top: 2px solid #fff;
     background: papayawhip;
     .area-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       font-size: 60px;
       color: #000;
       text-align: center;

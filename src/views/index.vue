@@ -65,7 +65,7 @@ export default {
       sizeModel: {
         width: '',
         length: '',
-        headerSpace: '',
+        headerSpace: 200,
         summarySpace: ''
       },
       currentFocus: ''
